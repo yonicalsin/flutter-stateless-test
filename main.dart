@@ -18,10 +18,11 @@ class MyApp extends StatelessWidget {
       body: new Container(
         child: new Center(
           child: new Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               new MyCard(
                 title: new Text("First Card"),
-                icon: new Icon(Icons.access_time),
+                icon: new Icon(Icons.access_time, size: 40.0,),
               ),
               new MyCard(
                 title: new Text("Second Card"),
@@ -49,12 +50,16 @@ class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
+      padding: const EdgeInsets.only(bottom: 3.0),
       child: new Card(
-        child: new Column(
-           children: <Widget>[
-             this.title,
-             this.icon
-           ]
+        child: new Container(
+          padding: const EdgeInsets.all(20.0),
+          child: new Column(
+            children: <Widget>[
+              this.title,
+              this.icon
+            ]
+          )
         )
       )
     );
